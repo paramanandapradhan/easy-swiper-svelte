@@ -1,4 +1,4 @@
 // Reexport your entry components here
-import EasyScriptLoader from "./easy-script-loader.svelte";
+import EasySwiper from "./easy-swiper.svelte";
 
-export default EasyScriptLoader;
+export default EasySwiper;

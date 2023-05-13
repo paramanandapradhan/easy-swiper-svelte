@@ -1,5 +1,5 @@
 <script lang="ts">
-	import EasyScriptLoader from '../lib/easy-script-loader.svelte';
+	import EasySwiper from '../lib/easy-swiper.svelte';
 
 	let swiperRef: HTMLDivElement;
 
@@ -17,12 +17,7 @@
 </script>
 
 <div>
-	<EasyScriptLoader
-		scriptName="Swiper"
-		script="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"
-		style="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-		on:load={handleSwipperLoad}
-	>
+	<EasySwiper on:load={handleSwipperLoad}>
 		<div class="swiper" bind:this={swiperRef}>
 			<div class="swiper-wrapper">
 				<div class="swiper-slide">Slide 1</div>
@@ -37,7 +32,7 @@
 				<div class="swiper-slide">Slide 10</div>
 			</div>
 		</div>
-	</EasyScriptLoader>
+	</EasySwiper>
 </div>
 
 <style>
