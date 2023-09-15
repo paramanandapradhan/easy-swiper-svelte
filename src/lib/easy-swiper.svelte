@@ -24,13 +24,28 @@
 	export let hasScrollbar: boolean = false;
 
 	export let size: number = 0;
+	export let slideWidth: 'fit-content' | 'auto' | string = 'fit-content';
+
+	export let slidesPerView: number | 'auto' = 3;
+	export let spaceBetween: number = 8;
+	export let freeMode: boolean = true;
+	export let clickable: boolean = false;
+	export let loop: boolean = false;
+	export let centeredSlides: boolean = false;
+	export let initialSlide: number = 0;
+	export let breakpoints: any = {};
 
 	export let swiperOptions: any = {
-		slidesPerView: 3,
-		spaceBetween: 8,
-		freeMode: true,
+		slidesPerView: slidesPerView,
+		spaceBetween: spaceBetween,
+		freeMode: freeMode,
+		loop: loop,
+		centeredSlides: centeredSlides,
+		initialSlide: initialSlide,
+		breakpoints: breakpoints,
 		pagination: {
-			clickable: true
+			el: '.swiper-pagination',
+			clickable: clickable
 		}
 	};
 
@@ -48,7 +63,7 @@
 	<div class="swiper {swiperClass}" bind:this={swiperRef} style=" {swiperStyle}">
 		<div class="swiper-wrapper {swiperWrapperClass}" style=" {swiperWrapperStyle}">
 			{#each Array(size) as _, index}
-				<div class="swiper-slide {swiperSlideClass}" style=" {swiperSlideStyle}">
+				<div class="swiper-slide {swiperSlideClass}" style="width:{slideWidth}; {swiperSlideStyle}">
 					<slot name="slide" {index} />
 				</div>
 			{/each}
